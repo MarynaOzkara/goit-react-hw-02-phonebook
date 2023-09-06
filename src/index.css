@@ -16,10 +16,10 @@ ul{
   padding-left: 0;
   margin: 0;
 }
-li{
+
+list{
   list-style: none;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

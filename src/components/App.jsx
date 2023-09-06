@@ -1,28 +1,34 @@
 
-import Profile from './Profile/Profile';
-import user from './Profile/user.json';
-
-import Statistics from './Statistics/Statistics';
-import data from './Statistics/data.json';
-
-import FriendList from './FriendList/FriendList';
-import friends from './FriendList/friends.json';
-
-import TransactionHistory from './Transactions/TransactionHistory';
-import transactions from './Transactions/transactions.json';
-
 export const App = () => {
   return (
     <div>
-       <Profile 
-          username={user.username} 
-          tag={user.tag} 
-          location={user.location} 
-          avatar={user.avatar} 
-          stats={user.stats}/>
-        <Statistics title="Upload stats" stats={data}/>
-        <FriendList friends={friends}/>
-        <TransactionHistory items={transactions}/>
-    </div> 
+      <h2>Phonebook</h2>
+      <div>
+        <ul>
+          <li>
+            <label htmlFor="name">Name</label>
+            <input type="text" name="name"/>
+          </li>
+          <li>
+            <label htmlFor="number">Number</label>
+            <input type="tel" name="number"/>
+          </li>
+        </ul>
+        <button type="button">Add contact</button>
+      </div>
+      <h2>Contacts</h2>
+      <ul>
+        <li>
+          <p>Eden Clements: 645-17-79</p>
+        </li>
+        <li>
+          <p>Eden Clements: 645-17-79</p>
+        </li>
+        <li>
+          <p>Rosi Simpson: 645-17-79</p>
+        </li>
+      </ul> 
+    </div>
+       
   );
 };
