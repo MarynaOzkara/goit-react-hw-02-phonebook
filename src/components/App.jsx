@@ -1,24 +1,18 @@
 import ContactForm from "./ContactForm/ContactForm";
-import { nanoid } from "nanoid";
+import { Container } from "./App.styled";
+// import { nanoid } from "nanoid";
+import ContactList from "./ContactList/ContactList";
+
+
 
 export const App = () => {
   return (
-    <div>
+    <Container>
       <h1>Phonebook</h1>
        <ContactForm/>
       <h2>Contacts</h2>
-      <ul>
-        <li>
-          <p>Eden Clements: 645-17-79</p>
-        </li>
-        <li>
-          <p>Eden Clements: 645-17-79</p>
-        </li>
-        <li>
-          <p>Rosi Simpson: 645-17-79</p>
-        </li>
-      </ul> 
-    </div>
+      <ContactList/> 
+    </Container>
        
   );
 };

@@ -4,6 +4,7 @@ export const FormWrap = styled.form`
   width: 450px;
   padding: 20px;
   border: 1px solid #000;
+  margin-bottom: 20px;
 `;
 export const InputWrap = styled.div`
   display: flex;
