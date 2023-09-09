@@ -26,4 +26,12 @@ export const Button = styled.button`
   color: #fff;
   border-radius: 8px;
   cursor: pointer;
+  transition: background-color ease 250ms;
+
+  &:hover,
+  :focus {
+    background-color: #fff;
+    border: 2px solid teal;
+    color: teal;
+  }
 `;

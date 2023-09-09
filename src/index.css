@@ -12,14 +12,11 @@ body {
 p, h1, h2, h3, h4{
   margin: 0;
 }
-ul{
+/* ul{
   padding-left: 0;
   margin: 0;
-}
+} */
 
-list{
-  list-style: none;
-}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;

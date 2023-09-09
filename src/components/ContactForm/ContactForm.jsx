@@ -1,24 +1,23 @@
 import { Component } from "react";
 import { FormWrap, InputWrap, Label, Input, Button } from "./ContactForm. styled";
 
-class ContactForm extends Component {
-state = {
-    contacts: [],
+const INITIAL_STATE = {
     name: '',
     number: '',
 }
+class ContactForm extends Component {
+state = INITIAL_STATE;
 handleChange = ({target:{value, name}}) => {
    
     this.setState({[name]: value})
-    console.log(name)
+    // console.log(name)
 }
 handleSubmit = (e) => {
   e.preventDefault();
   this.props.createUser(this.state);
-   console.log(this.state)
+  this.setState(INITIAL_STATE);
 }
 render(){
-    console.log(this.state);
   
     return (
         <FormWrap onSubmit={this.handleSubmit}>

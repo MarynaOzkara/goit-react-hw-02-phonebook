@@ -1,9 +1,20 @@
-import { ListItem, Name, Number } from "./ContactItem.styled";
+import { ListItem, Name, Number, CloseButton, Dot } from "./ContactItem.styled";
+import PropTypes from 'prop-types';
 
-const ContactItem = ({contacts}) => (
+
+const ContactItem = ({name, number, click}) => (
     <ListItem>
-        <Name>{contacts.name}</Name>
-        <Number>{contacts.number}</Number>
+        <Dot/>
+        <Name>{name}</Name>:
+        <Number>{number}</Number>
+        <CloseButton onClick={click}>Delete</CloseButton>
   </ListItem>
 )
+
+ContactItem.propTypes ={
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  clic: PropTypes.func
+}
+
 export default ContactItem;

@@ -1,34 +1,30 @@
+import ContactItem from "./ContactItem";
 import { ListOfContacts } from "./ContactList.styled";
-import ContactItem from "components/ContactList/ContactItem";
-import { Component } from "react";
+import PropTypes from 'prop-types';
 
 
-class ContactList extends Component {
-  state = { contacts: [], }
-  render(){
-    return this.state.contacts.map((contact) => (
-      <ListOfContacts key={contact.id}>
-         <ContactItem contacts={contact}/>
-      </ListOfContacts> 
-    )) 
-  }
+const ContactList = ({contacts, onDeleteContact}) => (
+  <ListOfContacts>
+    {contacts.map(({id, name, number}) => (
+      <ContactItem
+          key={id}
+          name={name}
+          number={number}
+          click={() => onDeleteContact(id)}
+        />
+    ))}
+  </ListOfContacts>
+)
+
+ContactList.propTypes = {
+  contacts: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+  onDeleteContact: PropTypes.func.isRequired
 }
-
-// const ContactList = ({contacts}) => {
-//   return <div>
-//       <ListOfContacts>{
-//           contacts.map((name, number) =>
-//             <ContactItem
-//               name={name}
-//               number={number}
-//             />
-//     )}
-    
-//       </ListOfContacts>
-//         </div>
-  
-// }
-  
-
 
 export default ContactList;
