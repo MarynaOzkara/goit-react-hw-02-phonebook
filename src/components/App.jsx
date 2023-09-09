@@ -53,13 +53,13 @@ filteredContacts = () => {
                  createUser={this.createUser}/>
           <SubTitle>Contacts</SubTitle>
           <Filter onChangeFilter={this.onChangeFilter}/>{
-            length > 0 ? (
+            length > 0 ?
               <ContactList 
                 contacts={filteredContacts} 
                 onDeleteContact={this.deleteContact}/>
-            ) : (
+             : 
               <Message>Contact list is empty! Add your first contact.</Message>
-            )
+            
           } 
           </Container>
     )
